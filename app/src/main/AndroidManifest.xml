@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fishinwater.android_version_update">
+    package="com.fishinwater.android_version_update"
+    android:versionCode="1"
+    android:versionName="1.0.0">
 
     <application
         android:allowBackup="true"
@@ -20,6 +22,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Android 7.0 照片、APK下载保存路径-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.fishinwater.android_version_update.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

@@ -141,7 +141,7 @@ public class HttpURLConnectionActivity extends AppCompatActivity {
             public void run() {
                 if (file != null) {
                     if(Build.VERSION.SDK_INT>=24) {//判读版本是否在7.0以上
-                        Uri apkUri = FileProvider.getUriForFile(getApplicationContext(), "com.csti.cetx.fileProvider", file);//在AndroidManifest中的android:authorities值
+                        Uri apkUri = FileProvider.getUriForFile(getApplicationContext(), "com.fishinwater.android_version_update.fileProvider", file);//在AndroidManifest中的android:authorities值
                         Intent install = new Intent(Intent.ACTION_VIEW);
                         install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// 一定要记得 先 setFlags 在 addFlags 否则 set 会覆盖 add
                         install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//添加这一句表示对目标应用临时授权该Uri所代表的文件
